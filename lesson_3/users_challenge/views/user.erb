@@ -1,0 +1,36 @@
+<h1><%= @name %></h1>
+
+<!-- Email -->
+<h3>Email</h3>
+<ul>
+  <% @users.each do |name, hash| %>
+    <% if name.to_s != @name %>
+      <% next %>
+    <% else %>
+      <li><%= hash[:email] %> </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<!-- Interests -->
+<h3>Interests</h3>
+<ul>
+  <% @users.each do |name, hash| %>
+    <% if name.to_s != @name %>
+      <% next %>
+    <% else %>
+      <%= hash[:interests].join(', ')  %>
+    <% end %>
+  <% end %>
+</ul>
+
+<!-- Other users -->
+<ul>
+  <% @users.keys.each do |name| %>
+    <% if name.to_s == @name %>
+      <% next %>
+    <% else %>
+      <li><a href="/<%= name %>"><%= name %></a></li>
+    <% end %>
+  <% end %>
+</ul>
