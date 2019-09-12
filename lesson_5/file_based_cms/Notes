@@ -1,0 +1,4 @@
+<!-- Comments -->
+
+`File.write` can also create a file if it already does not exist. That is why in the test where we are updating the data, we do not need to call the method `create_document`. It writes the data to a given path and then closes the file. If the the file already, exists, it updates it, if not, it creates it first and then updates it.
+
